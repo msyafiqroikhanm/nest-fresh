@@ -45,7 +45,10 @@ src/
 │       └── config/           # Configuration interfaces (e.g., database and environment)
 │
 ├── infrastructure/           # Infrastructure layer (data access, third-party integrations)
-│   ├── database/             
+│   ├── config
+│   │   ├── environment/
+|   │   └── mongo/
+│   ├── database/
 │   │   ├── models/           # Data models for ORM, such as Mongoose schemas
 │   │   ├── repositories/     # Repository implementations for database access
 │   │   └── seeders/          # Seeders for initializing data
