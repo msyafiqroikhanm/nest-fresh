@@ -15,6 +15,6 @@ async function bootstrap() {
     url: appConfig.getURL(),
   });
 
-  await app.listen(3000);
+  await app.listen(appConfig.getPort());
 }
 bootstrap();
