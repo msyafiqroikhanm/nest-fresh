@@ -22,6 +22,55 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+# Project Name
+
+## Overview
+
+This project follows **Clean Architecture** and **Modular Design**, separating core business logic from specific implementation details like data storage or external APIs. This structure facilitates maintainability, scalability, and testability of the application.
+
+## Code Structure
+
+```plaintext
+src/
+├── application/              # Application business logic layer
+│   ├── dtos/                 # Data Transfer Objects for data validation
+│   ├── services/             # Application services (use cases)
+│   └── interfaces/           # Interfaces used by application services
+│
+├── domain/                   # Domain Core layer - core business logic
+│   ├── entities/             # Business entities representing domain objects
+│   ├── repositories/         # Interfaces for repositories
+│   ├── value-objects/        # Value objects representing data without unique IDs
+│   └── interfaces/           # Interfaces for configuration and other domain elements
+│       └── config/           # Configuration interfaces (e.g., database and environment)
+│
+├── infrastructure/           # Infrastructure layer (data access, third-party integrations)
+│   ├── database/             
+│   │   ├── models/           # Data models for ORM, such as Mongoose schemas
+│   │   ├── repositories/     # Repository implementations for database access
+│   │   └── seeders/          # Seeders for initializing data
+│   ├── services/             # External services (email, Redis, etc.)
+│   └── queue/                # Queue implementations (e.g., Bull or Redis)
+│
+├── presentation/             # Presentation layer (API interface)
+│   ├── controllers/          # Controllers for handling requests
+│   ├── filters/              # Filters for error handling and exceptions
+│   └── guards/               # Guards for access protection
+│
+├── shared/                   # Reusable components (utilities, constants, etc.)
+│   ├── constants/            # Application constants
+│   ├── decorators/           # Custom decorators
+│   ├── exceptions/           # Custom exceptions
+│   ├── helpers/              # Utility functions
+│   └── middlewares/          # Middlewares for request processing
+│
+├── config/                   # General application and environment configurations
+│
+├── app.module.ts             # Main application module
+├── main.ts                   # Application entry point
+└── seed.ts                   # Script for initial data seeding
+```
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
